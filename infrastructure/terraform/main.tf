@@ -25,6 +25,15 @@ resource "azurerm_resource_group" "website_rg" {
   location = var.website_location
 }
 
+# Create a storage account to store the networks that the OpenDSS web back-end uses
+resource "azurerm_storage_account" "example" {
+  name                     = "${var.website_prefix}sa${random_integer.ri.result}"
+  resource_group_name      = azurerm_resource_group.website_rg.name
+  location                 = azurerm_resource_group.website_rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
 
 
 # Create an app service plan - Hosts the API
