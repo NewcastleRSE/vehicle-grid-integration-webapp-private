@@ -18,7 +18,7 @@ progress = "^1.6"
 python-multipart = "^0.0.5"
 pydantic = "^1.8.2"
 uvicorn = "^0.16.0"
-dss-python = "^0.10.7"
+dss-python = "0.12.1"
 
 [tool.poetry.scripts]
 azure_mockup = "vgi_api.azure_mockup:run_dss_simulation"
@@ -27,7 +27,7 @@ azure_mockup = "vgi_api.azure_mockup:run_dss_simulation"
 [tool.poetry.dev-dependencies]
 
 # Install normal dss-python in development. Install linux version manually on deployment
-# dss-python =  "^0.10.7.post1"
+# dss-python =  "0.12.1"
                 
 httpie = "^2.6.0"
 black = "^21.11b1"
