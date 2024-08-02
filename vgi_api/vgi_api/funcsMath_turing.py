@@ -130,7 +130,7 @@ def vecSlc(vec_like, new_idx):
                         print(np.unique(len_vl,return_counts=True,))
                         assert(n_len==1) # throw error
             
-            vec_slc = np.array(vec_like[0])[new_idx].tolist()
+            vec_slc = np.array(vec_like)[new_idx].tolist()
     return vec_slc
 
 
