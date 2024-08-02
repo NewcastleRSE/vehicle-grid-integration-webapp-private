@@ -112,7 +112,25 @@ def vecSlc(vec_like, new_idx):
         if type(vec_like) == tuple:
             vec_slc = tuple(np.array(vec_like)[new_idx].tolist())
         elif type(vec_like) == list:
-            vec_slc = np.array(vec_like)[new_idx].tolist()
+            # vec_slc = np.array(vec_like)[new_idx].tolist()
+            if type(vec_like[0])!=list:
+                pass
+            
+            else:
+                if len(vec_like)==1:
+                    pass
+                
+                else:
+                    len_vl = [len(r) for r in vec_like]
+                    n_len = len(set(len_vl))
+                    if n_len==1:
+                        pass
+                    
+                    else:
+                        print(np.unique(len_vl,return_counts=True,))
+                        assert(n_len==1) # throw error
+            
+            vec_slc = np.array(vec_like[0])[new_idx].tolist()
     return vec_slc
 
 
